@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Uczniowie{% endblock %}
+
+{% block body %}
+    <h1>Uczniowie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ uczniowie.id }}</td>
+            </tr>
+            <tr>
+                <th>Imie</th>
+                <td>{{ uczniowie.imie }}</td>
+            </tr>
+            <tr>
+                <th>Nazwisko</th>
+                <td>{{ uczniowie.nazwisko }}</td>
+            </tr>
+            <tr>
+                <th>Komentarz</th>
+                <td>{{ uczniowie.komentarz }}</td>
+            </tr>
+            <tr>
+                <th>Punkty</th>
+                <td>{{ uczniowie.punkty }}</td>
+            </tr>
+            <tr>
+                <th>Ocena</th>
+                <td>{{ uczniowie.ocena }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('uczniowie_index') }}">back to list</a>
+
+    <a href="{{ path('uczniowie_edit', {'id': uczniowie.id}) }}">edit</a>
+
+    {{ include('uczniowie/_delete_form.html.twig') }}
+{% endblock %}
